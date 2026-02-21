@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Rohit Sharma",
+    "type": "Batsman",
+    "battingSkill": 95,
+    "bowlingSkill": 20,
+    "fieldingSkill": 85
+  },
+  {
+    "name": "Virat Kohli",
+    "type": "Batsman",
+    "battingSkill": 92,
+    "bowlingSkill": 30,
+    "fieldingSkill": 90
+  },
+  {
+    "name": "Shikhar Dhawan",
+    "type": "Batsman",
+    "battingSkill": 85,
+    "bowlingSkill": 10,
+    "fieldingSkill": 80
+  },
+  {
+    "name": "Suryakumar Yadav",
+    "type": "Batsman",
+    "battingSkill": 88,
+    "bowlingSkill": 5,
+    "fieldingSkill": 85
+  },
+  {
+    "name": "Rishabh Pant",
+    "type": "Wicket Keeper",
+    "battingSkill": 80,
+    "bowlingSkill": 0,
+    "fieldingSkill": 95
+  },
+  {
+    "name": "Hardik Pandya",
+    "type": "All-Rounder",
+    "battingSkill": 75,
+    "bowlingSkill": 80,
+    "fieldingSkill": 85
+  },
+  {
+    "name": "Ravindra Jadeja",
+    "type": "All-Rounder",
+    "battingSkill": 70,
+    "bowlingSkill": 85,
+    "fieldingSkill": 98
+  },
+  {
+    "name": "Jasprit Bumrah",
+    "type": "Bowler",
+    "battingSkill": 15,
+    "bowlingSkill": 98,
+    "fieldingSkill": 75
+  },
+  {
+    "name": "Mohammed Shami",
+    "type": "Bowler",
+    "battingSkill": 20,
+    "bowlingSkill": 90,
+    "fieldingSkill": 70
+  },
+  {
+    "name": "Yuzvendra Chahal",
+    "type": "Bowler",
+    "battingSkill": 10,
+    "bowlingSkill": 88,
+    "fieldingSkill": 65
+  },
+  {
+    "name": "Bhuvneshwar Kumar",
+    "type": "Bowler",
+    "battingSkill": 30,
+    "bowlingSkill": 85,
+    "fieldingSkill": 80
+  },
+  {
+    "name": "KL Rahul",
+    "type": "Batsman",
+    "battingSkill": 82,
+    "bowlingSkill": 0,
+    "fieldingSkill": 85
+  },
+  {
+    "name": "Axar Patel",
+    "type": "All-Rounder",
+    "battingSkill": 60,
+    "bowlingSkill": 82,
+    "fieldingSkill": 80
+  },
+  {
+    "name": "Arshdeep Singh",
+    "type": "Bowler",
+    "battingSkill": 12,
+    "bowlingSkill": 84,
+    "fieldingSkill": 70
+  },
+  {
+    "name": "Ishan Kishan",
+    "type": "Wicket Keeper",
+    "battingSkill": 78,
+    "bowlingSkill": 0,
+    "fieldingSkill": 88
+  }
+]
