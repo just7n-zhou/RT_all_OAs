@@ -1,105 +1,135 @@
 [
-  {
+  { 
+    "id": "sjdsdu1232skdnsa",
     "name": "Rohit Sharma",
     "type": "Batsman",
+    "isSelected": false,
     "battingSkill": 95,
     "bowlingSkill": 20,
     "fieldingSkill": 85
   },
   {
+    "id": "sjudrbvhcbs_123213sdsa",
     "name": "Virat Kohli",
     "type": "Batsman",
+    "isSelected": false,
     "battingSkill": 92,
     "bowlingSkill": 30,
     "fieldingSkill": 90
   },
   {
+    "id":"sdjusfd712321889wa",
     "name": "Shikhar Dhawan",
     "type": "Batsman",
+    "isSelected": false,
     "battingSkill": 85,
     "bowlingSkill": 10,
     "fieldingSkill": 80
   },
   {
+    "id":"qwehshdajkshawue_12312sdsfhus",
     "name": "Suryakumar Yadav",
     "type": "Batsman",
+    "isSelected": false,
     "battingSkill": 88,
     "bowlingSkill": 5,
     "fieldingSkill": 85
   },
   {
+    "id":"dsuaohru123sakdjwql",
     "name": "Rishabh Pant",
     "type": "Wicket Keeper",
+    "isSelected": false,
     "battingSkill": 80,
     "bowlingSkill": 0,
     "fieldingSkill": 95
   },
   {
+    "id":"ad123uw42qdsozejws213qo",
     "name": "Hardik Pandya",
     "type": "All-Rounder",
+    "isSelected": false,
     "battingSkill": 75,
     "bowlingSkill": 80,
     "fieldingSkill": 85
   },
   {
+    "id":"qweojfiodjsh123ksniqo",
     "name": "Ravindra Jadeja",
     "type": "All-Rounder",
+    "isSelected": false,
     "battingSkill": 70,
     "bowlingSkill": 85,
     "fieldingSkill": 98
   },
   {
+    "id":"123ijsdjauihwea",
     "name": "Jasprit Bumrah",
     "type": "Bowler",
+    "isSelected": false,
     "battingSkill": 15,
     "bowlingSkill": 98,
     "fieldingSkill": 75
   },
   {
+    "id":"98sdjkwaekhas",
     "name": "Mohammed Shami",
     "type": "Bowler",
+    "isSelected": false,
     "battingSkill": 20,
     "bowlingSkill": 90,
     "fieldingSkill": 70
   },
   {
+    "id":"qoiohewkqj1231",
     "name": "Yuzvendra Chahal",
     "type": "Bowler",
+    "isSelected": false,
     "battingSkill": 10,
     "bowlingSkill": 88,
     "fieldingSkill": 65
   },
   {
+    "id":"12039shdwuhae",
     "name": "Bhuvneshwar Kumar",
     "type": "Bowler",
+    "isSelected": false,
     "battingSkill": 30,
     "bowlingSkill": 85,
     "fieldingSkill": 80
   },
   {
+    "id":"asudnwoqhe1321",
     "name": "KL Rahul",
     "type": "Batsman",
+    "isSelected": false,
     "battingSkill": 82,
     "bowlingSkill": 0,
     "fieldingSkill": 85
   },
   {
+    "id":"093989sdkjwia",
     "name": "Axar Patel",
     "type": "All-Rounder",
+    "isSelected": false,
     "battingSkill": 60,
     "bowlingSkill": 82,
     "fieldingSkill": 80
   },
   {
+    "id":"091203jndsjna",
     "name": "Arshdeep Singh",
     "type": "Bowler",
+    "isSelected": false,
     "battingSkill": 12,
     "bowlingSkill": 84,
     "fieldingSkill": 70
   },
   {
+    "id":"0idsjkahwueha12321",
     "name": "Ishan Kishan",
     "type": "Wicket Keeper",
+    "isSelected": false,
     "battingSkill": 78,
     "bowlingSkill": 0,
     "fieldingSkill": 88

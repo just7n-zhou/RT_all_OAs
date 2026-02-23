@@ -2,45 +2,54 @@ import React, { useState } from "react";
 import PlayerDetail from "../player-info";
 import players from "../../players.json";
 
+const ROLE_LIMITS = {
+  Batsman: 6,
+  Bowler: 6,
+  "All-Rounder": 4,
+  "Wicket Keeper": 1,
+};
+
 export default function TeamSelection() {
   const [selectedPlayers, setSelectPlayers] = useState([]);
-  const selectedSet = new Set(selectedPlayers.map((p) => p.name));
   const [welcome, setWelcome] = useState(true);
   const [showPlayerDetail, setShowPlayerDetail] = useState(false);
-  const [playerShownIdx, setPlayerShownIdx] = useState(null);
+  const [activePlayerId, setActivePlayerId] = useState(null);
 
-  const addPlayer = (_index) => {
-    const player = players[_index];
-    const ROLE_LIMITS = {
-      Batsman: 6,
-      Bowler: 6,
-      "All-Rounder": 4,
-      "Wicket Keeper": 1,
-    };
+  // Derive a Set of IDs for O(1) lookup speed in the UI
+  const selectedIds = new Set(selectedPlayers.map((p) => p.id));
+
+  const addPlayer = (id) => {
+    const player = players.find((p) => p.id === id);
+    if (!player) return;
+
     const typeCounts = selectedPlayers.reduce((acc, p) => {
       acc[p.type] = (acc[p.type] || 0) + 1;
       return acc;
     }, {});
 
+    const currentRoleCount = typeCounts[player.type] || 0;
+
     if (
       selectedPlayers.length < 11 &&
-      (typeCounts[player.type] || 0) < ROLE_LIMITS[player.type] &&
-      !selectedPlayers.some((p) => p.name === player.name)
+      currentRoleCount < ROLE_LIMITS[player.type] &&
+      !selectedIds.has(id)
     ) {
       setSelectPlayers((prev) => [...prev, player]);
     }
   };
 
-  const removePlayer = (_index) => {
-    setSelectPlayers((prev) => prev.filter((p, i) => i !== _index));
+  const removePlayer = (id) => {
+    setSelectPlayers((prev) => prev.filter((p) => p.id !== id));
   };
-  const showplayerDetailsCard = (_i) => {
-    console.log("clicked!");
-    setPlayerShownIdx(_i);
+
+  const showplayerDetailsCard = (id) => {
+    setActivePlayerId(id);
     setShowPlayerDetail(true);
   };
+
   const closeCard = () => {
     setShowPlayerDetail(false);
+    setActivePlayerId(null);
   };
 
   return (
@@ -53,11 +62,10 @@ export default function TeamSelection() {
         <div className="responsive-container tm-responsive-container">
           {showPlayerDetail && (
             <PlayerDetail
-              i={playerShownIdx}
-              close={() => closeCard()}
-              addPlayer={(i) => addPlayer(i)}
-              player={players[playerShownIdx]}
-              selectedPlayers={selectedPlayers}
+              player={players.find((p) => p.id === activePlayerId)}
+              close={closeCard}
+              addPlayer={addPlayer}
+              selectedIds={selectedIds}
             />
           )}
         </div>
@@ -93,32 +101,31 @@ export default function TeamSelection() {
                   </tr>
                 </thead>
                 <tbody>
-                  {players.map((player, index) => {
-                    const formattedName = player.name.split(" ").join("-");
+                  {players.map((player) => {
+                    const nameSlug = player.name.split(" ").join("-");
                     return (
                       <tr
-                        key={player.name}
-                        data-testid={`available-${formattedName}-row`}
+                        key={player.id}
+                        data-testid={`available-${nameSlug}-row`}
                         className="tm-row"
                       >
                         <td
-                          data-testid={`available-${formattedName}-name`}
-                          onClick={() => showplayerDetailsCard(index)}
+                          data-testid={`available-${nameSlug}-name`}
+                          onClick={() => showplayerDetailsCard(player.id)}
                         >
                           {player.name}
                         </td>
                         <td
-                          data-testid={`available-${formattedName}-type`}
-                          onClick={() => showplayerDetailsCard(index)}
+                          data-testid={`available-${nameSlug}-type`}
+                          onClick={() => showplayerDetailsCard(player.id)}
                         >
                           {player.type}
                         </td>
                         <td>
                           <button
-                            data-testid={`available-${formattedName}-select`}
-                            onClick={() => addPlayer(index)}
-                            // use set for constant look up
-                            disabled={selectedSet.has(player.name)}
+                            data-testid={`available-${nameSlug}-select`}
+                            onClick={() => addPlayer(player.id)}
+                            disabled={selectedIds.has(player.id)}
                             className="btn btn-primary text tm-select-btn"
                           >
                             Select
@@ -144,19 +151,19 @@ export default function TeamSelection() {
                   </tr>
                 </thead>
                 <tbody>
-                  {selectedPlayers.map((player, index) => {
-                    const formattedName = player.name.split(" ").join("-");
+                  {selectedPlayers.map((player) => {
+                    const nameSlug = player.name.split(" ").join("-");
                     return (
                       <tr
-                        key={player.name}
-                        data-testid={`selected-${formattedName}-row`}
+                        key={player.id}
+                        data-testid={`selected-${nameSlug}-row`}
                       >
                         <td>{player.name}</td>
                         <td>{player.type}</td>
                         <td>
                           <button
-                            data-testid={`selected-${formattedName}-remove`}
-                            onClick={() => removePlayer(index)}
+                            data-testid={`selected-${nameSlug}-remove`}
+                            onClick={() => removePlayer(player.id)}
                             className="btn btn-danger tm-remove-btn"
                           >
                             Remove
