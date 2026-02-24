@@ -5,6 +5,24 @@ const AddEmployee = ({ employees, setEmployees }) => {
   const [position, setPosition] = useState('');
   const [salary, setSalary] = useState('');
 
+  const isAddDisabled = !name.trim() || !position.trim() || !salary;
+
+  const handleAdd = () => {
+    const nextId = employees.length > 0 ? Math.max(...employees.map(e => e.id)) + 1 : 1;
+    
+    const newEmployee = {
+      id: nextId,
+      name,
+      position,
+      salary: Number(salary)
+    };
+
+    setEmployees([...employees, newEmployee]);
+    setName('');
+    setPosition('');
+    setSalary('');
+  };
+
   return (
     <div className='add-employee'>
       <input
@@ -30,7 +48,8 @@ const AddEmployee = ({ employees, setEmployees }) => {
       />
       <button
         data-testid='add-employee-button'
-        disabled
+        disabled={isAddDisabled}
+        onClick={handleAdd}
       >
         Add
       </button>
