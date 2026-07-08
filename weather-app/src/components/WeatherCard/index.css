@@ -1,0 +1,23 @@
+.weather-card {
+  transition: background-color 0.2s;
+}
+
+.weather-card:hover {
+  background-color: #f9f9f9;
+}
+
+.weather-card button {
+  background-color: #00c853;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.weather-card button:hover {
+  background-color: #00a844;
+}
